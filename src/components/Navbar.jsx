@@ -41,13 +41,13 @@ const Navbar = () => {
           <summary>Menu</summary>
           <ul className="p-2">
             <li>
-              <a href="/menu">All</a>
+              <Link to="/menu">All</Link>
             </li>
             <li>
-              <a href="/salad">Salad</a>
+              <Link to="/salad">Salad</Link>
             </li>
             <li>
-              <a href="/pizza">Pizza</a>
+              <Link to="/pizza">Pizza</Link>
             </li>
           </ul>
         </details>
