@@ -14,7 +14,7 @@ import Users from "../pages/dashboard/admin/Users";
 import AddMenu from "../pages/dashboard/admin/AddMenu";
 import ManageItems from "../pages/dashboard/admin/ManageItems";
 import UpdateMenu from "../pages/dashboard/admin/UpdateMenu";
-import Salad from "../pages/menuPage/salad";
+import Salad from "../pages/menuPage/Salad";
 import Pizza from "../pages/menuPage/Pizza";
 
 const router = createBrowserRouter([
