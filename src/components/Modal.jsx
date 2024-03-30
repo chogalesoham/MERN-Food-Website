@@ -17,7 +17,8 @@ const Modal = () => {
   //react hook form
   const {
     register,
-    handleSubmit, reset,
+    handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -33,7 +34,10 @@ const Modal = () => {
           email: data.email,
         };
         axios
-          .post("http://localhost:6001/users", userInfor)
+          .post(
+            "https://mern-food-website-backend.onrender.com/users",
+            userInfor
+          )
           .then((response) => {
             // console.log(response);
             alert("Signin successful!");
@@ -46,8 +50,7 @@ const Modal = () => {
         const errorMessage = error.message;
         seterrorMessage("Please provide valid email & password!");
       });
-      reset()
-
+    reset();
   };
 
   // login with google
@@ -60,7 +63,10 @@ const Modal = () => {
           email: result?.user?.email,
         };
         axios
-          .post("http://localhost:6001/users", userInfor)
+          .post(
+            "https://mern-food-website-backend.onrender.com/users",
+            userInfor
+          )
           .then((response) => {
             // console.log(response);
             alert("Signin successful!");

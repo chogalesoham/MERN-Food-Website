@@ -34,7 +34,7 @@ const Cards = ({ item }) => {
       };
 
       axios
-        .post("http://localhost:6001/carts", cartItem)
+        .post("https://mern-food-website-backend.onrender.com/carts", cartItem)
         .then((response) => {
           console.log(response);
           if (response) {
