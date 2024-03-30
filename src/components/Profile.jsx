@@ -1,18 +1,18 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
-import avatarImg from "/images/avatar.jpg"
+import avatarImg from "/images/avatar.jpg";
 import { Link, useNavigate } from "react-router-dom";
 
 const Profile = ({ user }) => {
   const { logOut } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // logout
   const handleLogout = () => {
     logOut()
       .then(() => {
         // Sign-out successful.
-        navigate("/")
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -30,8 +30,11 @@ const Profile = ({ user }) => {
             className="drawer-button btn btn-ghost btn-circle avatar"
           >
             <div className="w-10 rounded-full">
-              {user.photoURL? <img alt="" src={user.photoURL} /> : <img alt="" src={avatarImg} />}
-              
+              {user.photoURL ? (
+                <img alt="" src={user.photoURL} />
+              ) : (
+                <img alt="" src={avatarImg} />
+              )}
             </div>
           </label>
         </div>
@@ -44,19 +47,19 @@ const Profile = ({ user }) => {
           <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
             <li>
-              <a href="/update-profile">Profile</a>
+              <Link to="/update-profile">Profile</Link>
             </li>
             <li>
-              <a href="/order">Order</a>
+              <Link to="/order">Order</Link>
             </li>
             <li>
-              <a>Settings</a>
+              <Link>Settings</Link>
             </li>
             <li>
               <Link to="/dashboard">Dashboard</Link>
             </li>
             <li>
-              <a onClick={handleLogout}>Logout</a>
+              <Link onClick={handleLogout}>Logout</Link>
             </li>
           </ul>
         </div>
